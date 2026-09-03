@@ -1,0 +1,59 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+      - dev
+
+jobs:
+  lint:
+    name: Lint Shell Scripts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Run shell linting
+        run: bash scripts/lint-shell.sh --all
+
+  test:
+    name: Test Suite
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        test:
+          - tests/shell-lint/test-lint-shell.sh
+          - tests/version-bump/test-bump-version.sh
+          - tests/hooks/test-session-start.sh
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Run ${{ matrix.test }}
+        run: bash ${{ matrix.test }}
+
+  validate:
+    name: Validate Project Structure
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Validate package.json
+        run: |
+          # Check that package.json exists and is valid JSON
+          if ! command -v node &> /dev/null; then
+            # If node is not available, use Python to validate JSON
+            python3 -m json.tool package.json > /dev/null
+          else
+            node -e "const pkg = require('./package.json'); console.log('Package name:', pkg.name, 'Version:', pkg.version)"
+          fi
+      
+      - name: Verify key directories exist
+        run: |
+          test -d skills || (echo "skills directory not found" && exit 1)
+          test -d hooks || (echo "hooks directory not found" && exit 1)
+          test -f README.md || (echo "README.md not found" && exit 1)
+          echo "✓ All key directories and files found"
