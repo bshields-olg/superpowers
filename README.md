@@ -50,6 +50,8 @@ If you're using Superpowers in enterprise and could benefit from commercial supp
 
 Installation differs by harness. If you use more than one, install Superpowers separately for each one.
 
+Each harness also has a detailed guide covering how its integration works, how to verify it, and how to troubleshoot it — linked from its section below.
+
 ### Claude Code
 
 Superpowers is available via the [official Claude plugin marketplace](https://claude.com/plugins/superpowers)
@@ -78,6 +80,8 @@ The Superpowers marketplace provides Superpowers and some other related plugins 
   /plugin install superpowers@superpowers-marketplace
   ```
 
+- Detailed docs: [docs/README.claude-code.md](docs/README.claude-code.md)
+
 ### Antigravity
 
 Install Superpowers as a plugin from this repository:
@@ -89,6 +93,8 @@ agy plugin install https://github.com/obra/superpowers
 Antigravity runs the plugin's session-start hook, so Superpowers is active from
 the first message. Reinstall with the same command to update.
 
+- Detailed docs: [docs/README.antigravity.md](docs/README.antigravity.md)
+
 ### Codex App
 
 Superpowers is available via the [official Codex plugin marketplace](https://github.com/openai/plugins).
@@ -96,6 +102,7 @@ Superpowers is available via the [official Codex plugin marketplace](https://git
 - In the Codex app, click on Plugins in the sidebar.
 - You should see `Superpowers` in the Coding section.
 - Click the `+` next to Superpowers and follow the prompts.
+- Detailed docs: [docs/README.codex.md](docs/README.codex.md)
 
 ### Codex CLI
 
@@ -114,6 +121,7 @@ Superpowers is available via the [official Codex plugin marketplace](https://git
   ```
 
 - Select `Install Plugin`.
+- Detailed docs: [docs/README.codex.md](docs/README.codex.md)
 
 ### Cursor
 
@@ -124,6 +132,7 @@ Superpowers is available via the [official Codex plugin marketplace](https://git
   ```
 
 - Or search for "superpowers" in the plugin marketplace.
+- Detailed docs: [docs/README.cursor.md](docs/README.cursor.md)
 
 ### Devin CLI
 
@@ -139,6 +148,8 @@ Superpowers is available via the [official Codex plugin marketplace](https://git
   devin plugins update superpowers
   ```
 
+- Detailed docs: [docs/README.devin.md](docs/README.devin.md)
+
 ### Factory Droid
 
 - Register the marketplace:
@@ -152,6 +163,8 @@ Superpowers is available via the [official Codex plugin marketplace](https://git
   ```bash
   droid plugin install superpowers@superpowers
   ```
+
+- Detailed docs: [docs/README.droid.md](docs/README.droid.md)
 
 ### Gemini CLI
 
@@ -167,6 +180,8 @@ Superpowers is available via the [official Codex plugin marketplace](https://git
   gemini extensions update superpowers
   ```
 
+- Detailed docs: [docs/README.gemini.md](docs/README.gemini.md)
+
 ### GitHub Copilot CLI
 
 - Register the marketplace:
@@ -180,6 +195,8 @@ Superpowers is available via the [official Codex plugin marketplace](https://git
   ```bash
   copilot plugin install superpowers@superpowers-marketplace
   ```
+
+- Detailed docs: [docs/README.copilot.md](docs/README.copilot.md)
 
 ### Grok Build CLI
 
@@ -196,6 +213,8 @@ Superpowers is available via the [official Grok plugin marketplace](https://gith
   ```text
   /marketplace
   ```
+
+- Detailed docs: [docs/README.grok.md](docs/README.grok.md)
 
 ### Kimi Code
 
@@ -246,6 +265,8 @@ pi -e /path/to/superpowers
 
 The Pi package loads the Superpowers skills and a small extension that injects the `using-superpowers` bootstrap at session startup and again after compaction. Pi has native skills, so no compatibility `Skill` tool is required. Subagent and task-list tools remain optional Pi companion packages.
 
+- Detailed docs: [docs/README.pi.md](docs/README.pi.md)
+
 ### Hermes Agent
 
 Install Superpowers as a Hermes plugin from this repository:
@@ -257,6 +278,8 @@ hermes plugins install obra/superpowers --enable
 Restart any active Hermes sessions after installing. Note: Hermes has no
 post-compaction hook, so a very long session that compacts over its first
 turn loses the bootstrap — start a fresh session if skills stop triggering.
+
+- Detailed docs: [docs/README.hermes.md](docs/README.hermes.md)
 
 ## The Basic Workflow
 
