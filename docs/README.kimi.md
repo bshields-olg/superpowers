@@ -86,3 +86,16 @@ Kimi Code installs the latest GitHub release for a bare repository URL when one 
 1. Confirm `/plugins info superpowers` shows the plugin enabled.
 2. Start a fresh session with `/new`.
 3. Try the acceptance prompt: `Let's make a react todo list`. A working install should load `brainstorming` before writing code.
+
+## Tests
+
+- `tests/kimi/test-plugin-manifest.sh` — validates the manifest wiring: the
+  `skills` path, `sessionStart.skill`, and the inline `skillInstructions` mapping.
+
+Run them with `bash tests/kimi/run-tests.sh`.
+
+## Getting Help
+
+- Report issues: https://github.com/obra/superpowers/issues
+- Main documentation: https://github.com/obra/superpowers
+- Kimi Code: https://github.com/MoonshotAI/kimi-code

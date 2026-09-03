@@ -156,6 +156,17 @@ Then use the installed package path in `opencode.json`:
 1. Check OpenCode version supports `experimental.chat.messages.transform` hook
 2. Restart OpenCode after config changes
 
+## Tests
+
+- `tests/opencode/test-plugin-loading.sh` — isolated-install check that the plugin
+  loads and registers.
+- `tests/opencode/test-tools.sh`, `test-priority.sh` — tool registration and skill
+  priority.
+- `tests/opencode/test-bootstrap-caching.sh` / `.mjs` — bootstrap caching,
+  including behavior when `SKILL.md` is missing.
+
+Run them with `bash tests/opencode/run-tests.sh`.
+
 ## Getting Help
 
 - Report issues: https://github.com/obra/superpowers/issues
